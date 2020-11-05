@@ -81,14 +81,14 @@ namespace MigrationTesting.Features
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify the schema of the Customer table", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Verify the schema and values within the Customer table", new string[] {
                 "schema"}, SourceLine=11)]
-        public virtual void VerifyTheSchemaOfTheCustomerTable()
+        public virtual void VerifyTheSchemaAndValuesWithinTheCustomerTable()
         {
             string[] tagsOfScenario = new string[] {
                     "schema"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the schema of the Customer table", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the schema and values within the Customer table", null, tagsOfScenario, argumentsOfScenario);
 #line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -157,19 +157,96 @@ this.FeatureBackground();
 #line 21
  testRunner.And("verify the Customer record count is 100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "CustomerID",
+                            "firstname",
+                            "lastname",
+                            "birthdate",
+                            "city"});
+                table2.AddRow(new string[] {
+                            "1",
+                            "Josiah",
+                            "Mcgowan",
+                            "14-06-21",
+                            "Ruza"});
+#line 22
+ testRunner.And("verify the data in the first row of the Customer table is", ((string)(null)), table2, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "CustomerID",
+                            "firstname",
+                            "lastname",
+                            "birthdate",
+                            "city"});
+                table3.AddRow(new string[] {
+                            "100",
+                            "Lucius",
+                            "Dennis",
+                            "30-10-20",
+                            "Mascalucia"});
+#line 25
+ testRunner.And("verify the data in the last row of the Customer table is", ((string)(null)), table3, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "CustomerID",
+                            "firstname",
+                            "lastname",
+                            "birthdate",
+                            "city"});
+                table4.AddRow(new string[] {
+                            "2",
+                            "Brent",
+                            "Baker",
+                            "01-07-20",
+                            "Paulista"});
+#line 28
+ testRunner.And("verify the data in row 2 of the Customer table is", ((string)(null)), table4, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "CustomerID",
+                            "firstname",
+                            "lastname",
+                            "birthdate",
+                            "city"});
+                table5.AddRow(new string[] {
+                            "3",
+                            "Ira",
+                            "Fowler",
+                            "23-04-20",
+                            "Ashoknagar-Kalyangarh"});
+#line 31
+ testRunner.And("verify the data with CustomerID equal to 3 in the Customer table is", ((string)(null)), table5, "And ");
+#line hidden
+#line 34
+ testRunner.And("verify the count of records in the Customer table with a lastname of Young is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 35
+ testRunner.And("verify the count of records in the Customer table with a lastname of Cross is 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
+ testRunner.And("verify the sum of all values in the CustomerId column of the Customer table is 50" +
+                        "50", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+ testRunner.And("verify the DXAddress in the CustomerContact table always start with DX-", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 38
+ testRunner.And("verify the birthdate in the Customer table always has the format [0-9][0-9]-[0-9]" +
+                        "[0-9]-[0-9][0-9]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify the schema of the Address table", new string[] {
-                "schema"}, SourceLine=24)]
-        public virtual void VerifyTheSchemaOfTheAddressTable()
+        [TechTalk.SpecRun.ScenarioAttribute("Verify the schema and values within the Address table", new string[] {
+                "schema"}, SourceLine=41)]
+        public virtual void VerifyTheSchemaAndValuesWithinTheAddressTable()
         {
             string[] tagsOfScenario = new string[] {
                     "schema"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the schema of the Address table", null, tagsOfScenario, argumentsOfScenario);
-#line 25
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the schema and values within the Address table", null, tagsOfScenario, argumentsOfScenario);
+#line 42
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -192,49 +269,49 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 26
+#line 43
  testRunner.Given("the Address table exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "TABLE_NAME",
                             "COLUMN_NAME",
                             "DATA_TYPE",
                             "IS_NULLABLE",
                             "CHARACTER_MAXIMUM_LENGTH"});
-                table2.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Address",
                             "AddressID",
                             "int",
                             "NO",
                             ""});
-                table2.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Address",
                             "AddressLine1",
                             "varchar",
                             "YES",
                             "255"});
-                table2.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Address",
                             "AddressLine2",
                             "varchar",
                             "YES",
                             "255"});
-                table2.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Address",
                             "City",
                             "varchar",
                             "YES",
                             "255"});
-                table2.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Address",
                             "Postcode",
                             "varchar",
                             "YES",
                             "10"});
-#line 27
- testRunner.Then("verify the schema of the Address table", ((string)(null)), table2, "Then ");
+#line 44
+ testRunner.Then("verify the schema of the Address table", ((string)(null)), table6, "Then ");
 #line hidden
-#line 34
+#line 51
  testRunner.And("verify the Address record count is 80", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

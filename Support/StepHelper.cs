@@ -27,7 +27,7 @@ namespace MigrationTesting.Support
 
                 for (int i = 0; i < headerCellCount; i++)
                 {
-                    string columnName = table.Rows[0].AsEnumerable().ElementAt(i).Key;
+                    string columnName = row.AsEnumerable().ElementAt(i).Key;
                     dataRow[columnName] = Convert.ChangeType(row[i], typeof(string));
                 }
 
